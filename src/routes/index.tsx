@@ -231,12 +231,12 @@ function Index() {
 
       {/* SISTEMA */}
       <section id="sistema" className="scroll-mt-16 border-t border-white/10 bg-asphalt-2">
-        <div className="mx-auto max-w-6xl px-5 py-20">
-          <div className="mb-12 max-w-[46ch]">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 md:py-20">
+          <div className="mb-8 max-w-[46ch] md:mb-12">
             <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
               (a) O sistema
             </div>
-            <h2 className="font-display text-4xl tracking-tight text-frost md:text-5xl">
+            <h2 className="font-display text-3xl tracking-tight text-frost sm:text-4xl md:text-5xl">
               Tudo no lugar, como na sua bancada.
             </h2>
             <p className="mt-4 text-pretty text-frost/60">
@@ -244,6 +244,7 @@ function Index() {
             </p>
           </div>
           <div className="grid gap-4 md:grid-cols-2">
+
             <div className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl transition-colors hover:border-amber/40">
               <div className="mb-4 grid size-11 place-items-center rounded-lg bg-amber/15 text-amber">
                 ◷
@@ -298,15 +299,16 @@ function Index() {
 
       {/* PROVA */}
       <section id="prova" className="scroll-mt-16 border-t border-white/10">
-        <div className="mx-auto max-w-6xl px-5 py-20">
-          <div className="mb-10 flex items-end justify-between">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 md:py-20">
+          <div className="mb-8 flex items-end justify-between md:mb-10">
             <div>
               <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
                 (b) Prova
               </div>
-              <h2 className="font-display text-4xl tracking-tight text-frost md:text-5xl">
+              <h2 className="font-display text-3xl tracking-tight text-frost sm:text-4xl md:text-5xl">
                 Oficinas que já rodaram.
               </h2>
+
             </div>
             <div className="hidden font-mono text-[11px] uppercase tracking-[0.15em] text-frost/40 md:block">
               +40 oficinas
@@ -350,11 +352,11 @@ function Index() {
         className="relative overflow-hidden border-t border-white/10"
       >
         <div className="pointer-events-none absolute -bottom-40 left-1/2 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-amber/20 blur-[120px]"></div>
-        <div className="relative mx-auto max-w-3xl px-5 py-24 text-center">
+        <div className="relative mx-auto max-w-3xl px-4 py-16 text-center sm:px-5 md:py-24">
           <div className="mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
             (c) Vamos falar
           </div>
-          <h2 className="font-display text-[clamp(2.5rem,7vw,4.5rem)] leading-[0.95] tracking-tight text-frost">
+          <h2 className="font-display text-[clamp(2rem,9vw,4.5rem)] leading-[1.02] tracking-tight text-frost">
             Seu carro novo começa
             <br />
             com um site novo.
@@ -367,23 +369,37 @@ function Index() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noreferrer"
-            className="mt-8 inline-flex items-center gap-3 rounded-lg bg-amber px-8 py-4 text-lg font-semibold text-asphalt transition-colors hover:bg-amber-2"
+            className="mt-8 inline-flex w-full items-center justify-center gap-3 rounded-lg bg-amber px-8 py-4 text-lg font-semibold text-asphalt transition-colors hover:bg-amber-2 sm:w-auto"
             style={{ animation: "pulse-ring 2.4s var(--ease) infinite" }}
           >
             <span className="text-2xl">✆</span> Chamar no WhatsApp
           </a>
+
           <p className="mt-4 font-mono text-[11px] uppercase tracking-[0.15em] text-frost/40">
             Resposta em minutos · sem compromisso
           </p>
         </div>
       </section>
 
-      <footer className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-5 py-8 font-mono text-[10px] uppercase tracking-[0.15em] text-frost/40 md:flex-row">
+      <footer className="border-t border-white/10 pb-24 md:pb-0">
+        <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-3 px-4 py-8 text-center font-mono text-[10px] uppercase tracking-[0.15em] text-frost/40 sm:px-5 md:flex-row md:text-left">
           <span>David Oliveira · Sites &amp; sistema para oficinas</span>
           <span>© 2026 · Belo Horizonte, MG</span>
         </div>
       </footer>
+
+      {/* BARRA FIXA MOBILE */}
+      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-asphalt/90 px-4 py-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] backdrop-blur-xl md:hidden">
+        <a
+          href={WHATSAPP_URL}
+          target="_blank"
+          rel="noreferrer"
+          className="flex w-full items-center justify-center gap-2 rounded-lg bg-amber px-6 py-3.5 font-semibold text-asphalt"
+        >
+          <span className="text-lg">✆</span> Chamar no WhatsApp
+        </a>
+      </div>
+
     </div>
   );
 }

@@ -104,9 +104,8 @@ function Index() {
               Sua oficina
               <br />
               na internet.
-              <br />
               <span
-                className="text-amber"
+                className="mt-1 block text-amber"
                 style={{ animation: "wipe 0.9s var(--ease) 0.25s both" }}
               >
                 Sem dor de cabeça.

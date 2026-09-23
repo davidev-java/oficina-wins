@@ -44,40 +44,43 @@ function Index() {
     <div className="min-h-screen bg-asphalt font-body text-frost antialiased selection:bg-amber selection:text-asphalt">
       {/* NAV */}
       <header className="sticky top-0 z-50 border-b border-white/10 bg-asphalt/70 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3">
-          <div className="flex items-center gap-2.5">
-            <div className="grid size-8 place-items-center rounded-md bg-amber font-display text-lg leading-none text-asphalt">
+        <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-5">
+          <div className="flex min-w-0 items-center gap-2.5">
+            <div className="grid size-8 shrink-0 place-items-center rounded-md bg-amber font-display text-lg leading-none text-asphalt">
               D
             </div>
-            <div className="leading-none">
-              <div className="font-display text-lg tracking-tight">
+            <div className="min-w-0 leading-none">
+              <div className="truncate font-display text-base tracking-tight sm:text-lg">
                 DAVID OLIVEIRA
               </div>
-              <div className="font-mono text-[9px] uppercase tracking-[0.2em] text-frost/40">
+              <div className="truncate font-mono text-[9px] uppercase tracking-[0.2em] text-frost/40">
                 sites &amp; sistema para oficinas
               </div>
             </div>
           </div>
-          <nav className="hidden items-center gap-7 font-mono text-[11px] uppercase tracking-[0.15em] text-frost/60 md:flex">
-            <a href="#exemplo" className="transition-colors hover:text-frost">
-              Exemplo
+          <div className="flex items-center gap-7">
+            <nav className="hidden items-center gap-7 font-mono text-[11px] uppercase tracking-[0.15em] text-frost/60 md:flex">
+              <a href="#exemplo" className="transition-colors hover:text-frost">
+                Exemplo
+              </a>
+              <a href="#sistema" className="transition-colors hover:text-frost">
+                Sistema
+              </a>
+              <a href="#prova" className="transition-colors hover:text-frost">
+                Prova
+              </a>
+            </nav>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="flex shrink-0 items-center gap-2 rounded-md bg-amber px-3 py-2 font-mono text-[10px] font-medium uppercase tracking-[0.12em] text-asphalt transition-colors hover:bg-amber-2 sm:px-4 sm:text-[11px]"
+            >
+              <span className="size-1.5 rounded-full bg-asphalt" /> WhatsApp
             </a>
-            <a href="#sistema" className="transition-colors hover:text-frost">
-              Sistema
-            </a>
-            <a href="#prova" className="transition-colors hover:text-frost">
-              Prova
-            </a>
-          </nav>
-          <a
-            href={WHATSAPP_URL}
-            target="_blank"
-            rel="noreferrer"
-            className="flex items-center gap-2 rounded-md bg-amber px-4 py-2 font-mono text-[11px] font-medium uppercase tracking-[0.12em] text-asphalt transition-colors hover:bg-amber-2"
-          >
-            <span className="size-1.5 rounded-full bg-asphalt" /> WhatsApp
-          </a>
+          </div>
         </div>
+
       </header>
 
       {/* HERO */}

@@ -94,7 +94,7 @@ function Index() {
             backgroundSize: "44px 44px",
           }}
         ></div>
-        <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-5 py-16 md:grid-cols-12 md:py-24">
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-4 py-12 sm:px-5 md:grid-cols-12 md:gap-12 md:py-24">
           <div className="md:col-span-6">
             <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-frost/70 backdrop-blur-md">
               <span className="size-1.5 rounded-full bg-amber" /> Minas Partes
@@ -122,26 +122,27 @@ function Index() {
               orçamentos e clientes. Menos papel, mais carro na rua.
             </p>
             <div
-              className="mt-8 flex flex-wrap items-center gap-3"
+              className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:flex-wrap sm:items-center"
               style={{ animation: "rise 0.7s var(--ease) 0.25s both" }}
             >
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noreferrer"
-                className="flex items-center gap-2 rounded-md bg-amber px-6 py-3.5 font-semibold text-asphalt transition-colors hover:bg-amber-2"
+                className="flex items-center justify-center gap-2 rounded-md bg-amber px-6 py-3.5 font-semibold text-asphalt transition-colors hover:bg-amber-2"
                 style={{ animation: "pulse-ring 2.4s var(--ease) 1.2s infinite" }}
               >
                 <span className="text-lg">✆</span> Chamar no WhatsApp
               </a>
               <a
                 href="#exemplo"
-                className="rounded-md border border-white/15 bg-white/5 px-6 py-3.5 font-medium text-frost backdrop-blur-md transition-colors hover:bg-white/10"
+                className="rounded-md border border-white/15 bg-white/5 px-6 py-3.5 text-center font-medium text-frost backdrop-blur-md transition-colors hover:bg-white/10"
               >
                 Ver exemplo
               </a>
             </div>
-            <div className="mt-10 flex flex-wrap gap-x-8 gap-y-3 font-mono text-[11px] uppercase tracking-[0.12em] text-frost/45">
+
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2 font-mono text-[10px] uppercase tracking-[0.12em] text-frost/45 sm:mt-10 sm:gap-x-8 sm:gap-y-3 sm:text-[11px]">
               <span>Entrega em 15 dias</span>
               <span>Domínio incluso</span>
               <span>Suporte por WhatsApp</span>

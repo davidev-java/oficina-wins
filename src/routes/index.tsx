@@ -268,6 +268,11 @@ function Index() {
             <Busca titulo="Só com Instagram" destaque={false} />
             <Busca titulo="Com site e Perfil no Google" destaque />
           </div>
+
+          <p className="mt-10 text-center font-display text-[clamp(1.6rem,4.5vw,2.75rem)] leading-tight tracking-tight text-frost">
+            Sua empresa aparece no Google com{" "}
+            <span className="text-amber">site, mapa e WhatsApp.</span>
+          </p>
         </div>
       </section>
 

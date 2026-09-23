@@ -76,6 +76,21 @@ const ofertas = [
   },
 ];
 
+const pacote = [
+  "Site profissional com a cara da sua empresa",
+  "Perfil da Empresa no Google configurado",
+  "Plaquinha de avaliação no balcão (aproximação + QR code)",
+  "Botão de WhatsApp com mensagem pronta",
+  "Entrega em até 15 dias",
+];
+
+const manutencao = [
+  "Hospedagem do site",
+  "Domínio próprio (.com.br)",
+  "Pequenas alterações: horário, fotos, serviços",
+  "Suporte pelo WhatsApp",
+];
+
 const passos = [
   { titulo: "Você me chama no WhatsApp", texto: "Conta sobre a sua empresa e o que você precisa." },
   { titulo: "Eu monto tudo", texto: "Você me manda fotos e informações, eu cuido do resto." },
@@ -106,6 +121,9 @@ function Index() {
               </a>
               <a href="#servicos" className="transition-colors hover:text-frost">
                 Serviços
+              </a>
+              <a href="#preco" className="transition-colors hover:text-frost">
+                Preço
               </a>
               <a href="/exemplo" className="transition-colors hover:text-frost">
                 Exemplo
@@ -286,12 +304,81 @@ function Index() {
         </div>
       </section>
 
+      {/* PREÇO */}
+      <section id="preco" className="scroll-mt-16 border-t border-white/10">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 md:py-20">
+          <div className="mb-8 max-w-[46ch] md:mb-12">
+            <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
+              (c) Preço
+            </div>
+            <h2 className="font-display text-3xl tracking-tight text-frost sm:text-4xl md:text-5xl">
+              Preço de lançamento na Minas Parts.
+            </h2>
+            <p className="mt-4 text-pretty text-frost/60">
+              Válido só para os 3 primeiros clientes. Depois volta ao preço normal.
+            </p>
+          </div>
+
+          <div className="grid gap-4 md:grid-cols-5">
+            <div className="relative rounded-2xl border border-amber/50 bg-amber/5 p-6 sm:p-8 md:col-span-3">
+              <span className="absolute -top-3 left-6 rounded-full bg-amber px-3 py-1 font-mono text-[10px] font-medium uppercase tracking-[0.15em] text-asphalt">
+                Só 3 vagas
+              </span>
+              <h3 className="font-display text-2xl tracking-tight text-frost">Pacote completo</h3>
+              <div className="mt-4 flex flex-wrap items-end gap-x-4 gap-y-1">
+                <span className="font-display text-5xl text-amber sm:text-6xl">R$ 600</span>
+                <span className="pb-2 text-lg text-frost/40 line-through">R$ 1.200</span>
+              </div>
+              <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.15em] text-frost/50">
+                pagamento único
+              </div>
+              <ul className="mt-6 space-y-2.5 text-frost/80">
+                {pacote.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="text-amber">✓</span> {item}
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-8 flex items-center justify-center gap-2 rounded-lg bg-amber px-6 py-3.5 font-semibold text-asphalt transition-colors hover:bg-amber-2"
+              >
+                <span className="text-lg">✆</span> Quero uma das 3 vagas
+              </a>
+            </div>
+
+            <div className="flex flex-col rounded-2xl border border-white/10 bg-white/5 p-6 sm:p-8 md:col-span-2">
+              <h3 className="font-display text-2xl tracking-tight text-frost">Manutenção mensal</h3>
+              <div className="mt-4 flex flex-wrap items-end gap-x-4 gap-y-1">
+                <span className="font-display text-5xl text-frost sm:text-6xl">R$ 49</span>
+                <span className="pb-2 text-lg text-frost/40 line-through">R$ 79</span>
+              </div>
+              <div className="mt-1 font-mono text-[11px] uppercase tracking-[0.15em] text-frost/50">
+                por mês
+              </div>
+              <ul className="mt-6 space-y-2.5 text-frost/80">
+                {manutencao.map((item) => (
+                  <li key={item} className="flex gap-3">
+                    <span className="text-amber">✓</span> {item}
+                  </li>
+                ))}
+              </ul>
+              <p className="mt-auto pt-6 text-sm text-frost/45">
+                Catálogo online e sistema de ordens de serviço: valor sob consulta.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* COMO FUNCIONA */}
       <section className="border-t border-white/10 bg-asphalt-2">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 md:py-20">
           <div className="mb-8 max-w-[46ch] md:mb-12">
             <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
-              (c) Como funciona
+              (d) Como funciona
             </div>
             <h2 className="font-display text-3xl tracking-tight text-frost sm:text-4xl md:text-5xl">
               Você cuida dos carros. Eu cuido da internet.
@@ -317,7 +404,7 @@ function Index() {
         <div className="pointer-events-none absolute -bottom-40 left-1/2 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-amber/20 blur-[120px]"></div>
         <div className="relative mx-auto max-w-3xl px-4 py-16 text-center sm:px-5 md:py-24">
           <div className="mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
-            (d) Vamos falar
+            (e) Vamos falar
           </div>
           <h2 className="font-display text-[clamp(2rem,8vw,4.5rem)] leading-[1.02] tracking-tight text-frost">
             Seu cliente está procurando

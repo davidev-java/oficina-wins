@@ -98,7 +98,7 @@ function Index() {
               · Expo Minas · BH
             </div>
             <h1
-              className="font-display text-[clamp(3rem,8vw,6rem)] leading-[0.9] tracking-tight text-frost"
+              className="font-display text-[clamp(2.75rem,7vw,5.5rem)] leading-[1.02] tracking-tight text-frost"
               style={{ animation: "rise 0.7s var(--ease) both" }}
             >
               Sua oficina

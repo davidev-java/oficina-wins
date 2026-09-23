@@ -45,9 +45,7 @@ function Index() {
       <header className="sticky top-0 z-50 border-b border-white/10 bg-asphalt/70 backdrop-blur-xl">
         <div className="mx-auto grid max-w-6xl grid-cols-[minmax(0,1fr)_auto] items-center gap-3 px-4 py-3 sm:px-5">
           <div className="flex min-w-0 items-center gap-2.5">
-            <div className="grid size-8 shrink-0 place-items-center rounded-md bg-amber font-display text-lg leading-none text-asphalt">
-              D
-            </div>
+            <img src="/logo.png" alt="Logo David Oliveira" className="size-8 shrink-0 rounded-md" />
             <div className="min-w-0 leading-none">
               <div className="truncate font-display text-base tracking-tight sm:text-lg">
                 DAVID OLIVEIRA

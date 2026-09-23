@@ -66,9 +66,6 @@ function Index() {
               <a href="#sistema" className="transition-colors hover:text-frost">
                 Sistema
               </a>
-              <a href="#prova" className="transition-colors hover:text-frost">
-                Prova
-              </a>
             </nav>
             <a
               href={WHATSAPP_URL}
@@ -297,55 +294,6 @@ function Index() {
         </div>
       </section>
 
-      {/* PROVA */}
-      <section id="prova" className="scroll-mt-16 border-t border-white/10">
-        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 md:py-20">
-          <div className="mb-8 flex items-end justify-between md:mb-10">
-            <div>
-              <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
-                (b) Prova
-              </div>
-              <h2 className="font-display text-3xl tracking-tight text-frost sm:text-4xl md:text-5xl">
-                Oficinas que já rodaram.
-              </h2>
-
-            </div>
-            <div className="hidden font-mono text-[11px] uppercase tracking-[0.15em] text-frost/40 md:block">
-              +40 oficinas
-            </div>
-          </div>
-          <div className="grid gap-4 md:grid-cols-3">
-            <figure className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-              <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.15em] text-frost/40">
-                Oficina do Miguel
-              </div>
-              <blockquote className="text-pretty text-frost/80">
-                “Parei de perder cliente pro concorrente. O orçamento sai na
-                hora e o cara fecha na hora.”
-              </blockquote>
-            </figure>
-            <figure className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-              <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.15em] text-frost/40">
-                Autopeças Rocha
-              </div>
-              <blockquote className="text-pretty text-frost/80">
-                “O site trouxe cliente novo todos os dias. O estoque parou de
-                sumir no fim do mês.”
-              </blockquote>
-            </figure>
-            <figure className="rounded-xl border border-white/10 bg-white/5 p-6 backdrop-blur-xl">
-              <div className="mb-4 font-mono text-[10px] uppercase tracking-[0.15em] text-frost/40">
-                Mecânica da Esquina
-              </div>
-              <blockquote className="text-pretty text-frost/80">
-                “A agenda organizada mudou o turno. Ninguém mais briga por quem
-                atende primeiro.”
-              </blockquote>
-            </figure>
-          </div>
-        </div>
-      </section>
-
       {/* CTA FINAL */}
       <section
         id="contato"
@@ -354,7 +302,7 @@ function Index() {
         <div className="pointer-events-none absolute -bottom-40 left-1/2 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-amber/20 blur-[120px]"></div>
         <div className="relative mx-auto max-w-3xl px-4 py-16 text-center sm:px-5 md:py-24">
           <div className="mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
-            (c) Vamos falar
+            (b) Vamos falar
           </div>
           <h2 className="font-display text-[clamp(2rem,9vw,4.5rem)] leading-[1.02] tracking-tight text-frost">
             Seu carro novo começa

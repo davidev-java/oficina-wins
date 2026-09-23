@@ -1,7 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 
-// Placeholder — troque pelo número real de WhatsApp do David (formato: 55 + DDD + número).
-const WHATSAPP_URL = "https://wa.me/5531990000000";
+const WHATSAPP_URL = "https://wa.me/5531971521813";
 
 export const Route = createFileRoute("/")({
   head: () => ({

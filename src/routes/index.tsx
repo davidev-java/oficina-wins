@@ -76,12 +76,13 @@ const ofertas = [
   },
 ];
 
-const pacote = [
-  "Site profissional com a cara da sua empresa",
+const pacote = ["Site profissional com a cara da sua empresa", "Entrega em até 15 dias"];
+
+// vêm junto com o site, sem custo: o único item pago do pacote é o site
+const brindes = [
   "Perfil da Empresa no Google configurado",
   "Plaquinha de avaliação no balcão (aproximação + QR code)",
   "Botão de WhatsApp com mensagem pronta",
-  "Entrega em até 15 dias",
 ];
 
 const manutencao = [
@@ -344,6 +345,18 @@ function Index() {
                   </li>
                 ))}
               </ul>
+              <div className="mt-6 border-t border-white/10 pt-5">
+                <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-amber">
+                  De brinde
+                </div>
+                <ul className="mt-3 space-y-2.5 text-frost/70">
+                  {brindes.map((item) => (
+                    <li key={item} className="flex gap-3">
+                      <span className="text-amber">+</span> {item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
               <a
                 href={WHATSAPP_URL}
                 target="_blank"

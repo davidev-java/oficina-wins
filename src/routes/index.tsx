@@ -310,12 +310,49 @@ function Index() {
         </div>
       </section>
 
+      {/* PERFIL NO GOOGLE + CARTÃO DE AVALIAÇÃO */}
+      <section id="brindes" className="scroll-mt-16 border-t border-white/10 bg-asphalt-2">
+        <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 md:py-20">
+          <div className="mb-8 max-w-[50ch] md:mb-12">
+            <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
+              (c) Na prática
+            </div>
+            <h2 className="font-display text-3xl tracking-tight text-frost sm:text-4xl md:text-5xl">
+              O que o seu cliente vai ver.
+            </h2>
+          </div>
+
+          <div className="grid gap-10 md:grid-cols-2 md:gap-8">
+            <div>
+              <PerfilGoogle />
+              <h3 className="mt-6 font-display text-xl tracking-tight text-frost">Perfil no Google</h3>
+              <p className="mt-2 max-w-[48ch] text-sm text-pretty text-frost/60">
+                É o quadro que aparece quando alguém pesquisa a sua empresa ou “oficina perto de
+                mim”. Mostra endereço, telefone, horário, fotos e avaliações. O cliente liga,
+                traça a rota ou chama no WhatsApp com um toque, sem precisar te procurar no
+                Instagram.
+              </p>
+            </div>
+
+            <div>
+              <CartaoAvaliacao />
+              <h3 className="mt-6 font-display text-xl tracking-tight text-frost">Cartão de avaliação</h3>
+              <p className="mt-2 max-w-[48ch] text-sm text-pretty text-frost/60">
+                Fica no balcão. Terminou o serviço, o cliente encosta o celular no cartão (ou lê o
+                QR code) e abre direto a página de avaliar a sua empresa no Google. Mais
+                avaliações fazem você aparecer antes dos concorrentes na busca.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* PREÇO */}
       <section id="preco" className="scroll-mt-16 border-t border-white/10">
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 md:py-20">
           <div className="mb-8 max-w-[46ch] md:mb-12">
             <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
-              (c) Preço
+              (d) Preço
             </div>
             <h2 className="font-display text-3xl tracking-tight text-frost sm:text-4xl md:text-5xl">
               Preço de lançamento na Minas Parts.
@@ -396,7 +433,7 @@ function Index() {
         <div className="mx-auto max-w-6xl px-4 py-14 sm:px-5 md:py-20">
           <div className="mb-8 max-w-[46ch] md:mb-12">
             <div className="mb-3 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
-              (d) Como funciona
+              (e) Como funciona
             </div>
             <h2 className="font-display text-3xl tracking-tight text-frost sm:text-4xl md:text-5xl">
               Você cuida dos carros. Eu cuido da internet.
@@ -422,7 +459,7 @@ function Index() {
         <div className="pointer-events-none absolute -bottom-40 left-1/2 h-[400px] w-[700px] -translate-x-1/2 rounded-full bg-amber/20 blur-[120px]"></div>
         <div className="relative mx-auto max-w-3xl px-4 py-16 text-center sm:px-5 md:py-24">
           <div className="mb-4 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
-            (e) Vamos falar
+            (f) Vamos falar
           </div>
           <h2 className="font-display text-[clamp(2rem,8vw,4.5rem)] leading-[1.02] tracking-tight text-frost">
             Seu cliente está procurando
@@ -521,6 +558,101 @@ function Busca({ titulo, destaque }: { titulo: string; destaque: boolean }) {
               Sua empresa não aparece aqui
             </div>
           )}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Simulação do Perfil da Empresa no Google (o quadro que aparece na pesquisa),
+// com os dados da oficina fictícia do /exemplo.
+function PerfilGoogle() {
+  const acoes = [
+    { icone: "✆", rotulo: "Ligar" },
+    { icone: "➤", rotulo: "Rota" },
+    { icone: "◧", rotulo: "Site" },
+    { icone: "✉", rotulo: "WhatsApp" },
+  ];
+  const dados = [
+    { icone: "⌖", texto: "Rua dos Mecânicos, 120 · Santa Efigênia, Belo Horizonte - MG" },
+    { icone: "◷", texto: "Aberto agora · Fecha às 18:00" },
+    { icone: "✆", texto: "(31) 3333-0000" },
+    { icone: "◧", texto: "oficinasaocristovao.com.br" },
+  ];
+  return (
+    <div className="overflow-hidden rounded-xl bg-white text-ink shadow-2xl shadow-black/40">
+      <div className="flex items-center gap-2 border-b border-line px-4 py-3">
+        <span className="text-sm text-ink-soft">⌕</span>
+        <span className="text-sm">oficina são cristóvão</span>
+      </div>
+      <div className="grid h-28 grid-cols-3 grid-rows-1 gap-0.5 overflow-hidden sm:h-32">
+        <img src="/exemplo/hero.jpg" alt="" className="col-span-2 size-full min-h-0 object-cover" />
+        <div className="grid min-h-0 grid-rows-2 gap-0.5">
+          <img src="/exemplo/mecanico.jpg" alt="" className="size-full min-h-0 object-cover" />
+          <img src="/exemplo/oleo.jpg" alt="" className="size-full min-h-0 object-cover" />
+        </div>
+      </div>
+      <div className="p-4">
+        <div className="text-xl font-semibold">Oficina São Cristóvão</div>
+        <div className="mt-1 flex flex-wrap items-center gap-x-1.5 text-sm text-ink-soft">
+          <span className="font-medium text-ink">4,9</span>
+          <span className="text-amber">★★★★★</span>
+          <span>(128 avaliações)</span>
+          <span>· Oficina mecânica</span>
+        </div>
+        <div className="mt-4 grid grid-cols-4 gap-2 border-b border-line pb-4">
+          {acoes.map((a) => (
+            <div key={a.rotulo} className="flex flex-col items-center gap-1.5">
+              <span className="grid size-10 place-items-center rounded-full border border-line text-amber">
+                {a.icone}
+              </span>
+              <span className="text-[11px] font-medium">{a.rotulo}</span>
+            </div>
+          ))}
+        </div>
+        <ul className="mt-3 space-y-2.5 text-sm">
+          {dados.map((d) => (
+            <li key={d.texto} className="flex gap-3">
+              <span className="w-4 shrink-0 text-center text-ink-soft">{d.icone}</span>
+              <span>{d.texto}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  );
+}
+
+// Cartão de avaliação do balcão: aproximação (NFC) ou QR code abrem a página de
+// avaliar no Google. Aqui o QR leva para este site.
+function CartaoAvaliacao() {
+  return (
+    <div className="grid place-items-center rounded-xl border border-white/10 bg-white/5 px-6 py-10 [perspective:1000px] sm:py-14">
+      <div className="w-full max-w-[340px] [transform:rotateX(12deg)_rotateY(-14deg)_rotateZ(2deg)] [transform-style:preserve-3d]">
+        <div className="relative aspect-[85.6/54] rounded-2xl border border-white/15 bg-gradient-to-br from-[#26292f] to-[#111317] p-5 shadow-[18px_28px_40px_-12px_rgba(0,0,0,0.7)]">
+          <div className="absolute inset-x-0 top-0 h-1 rounded-t-2xl bg-amber"></div>
+          <div className="flex h-full gap-4">
+            <div className="flex min-w-0 flex-1 flex-col justify-between">
+              <div>
+                <div className="text-[11px] tracking-[0.2em] text-amber">★★★★★</div>
+                <div className="mt-2 font-display text-lg leading-tight text-frost sm:text-xl">
+                  Gostou do serviço?
+                </div>
+                <div className="mt-1 text-[11px] leading-snug text-frost/60">
+                  Avalie a gente no Google
+                </div>
+              </div>
+              <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.12em] text-frost/50">
+                <span className="text-sm text-amber">)))</span> Aproxime o celular
+              </div>
+            </div>
+            <div className="flex flex-col items-center justify-center gap-1.5">
+              <div className="rounded-md bg-white p-1.5">
+                <img src="/qr-site.svg" alt="QR code" className="size-[72px] sm:size-20" />
+              </div>
+              <span className="font-mono text-[8px] uppercase tracking-[0.12em] text-frost/40">ou leia o QR</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>

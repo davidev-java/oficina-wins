@@ -344,6 +344,33 @@ function Index() {
               </p>
             </div>
           </div>
+
+          {/* do cartão até o topo da busca */}
+          <div className="mt-12 grid gap-10 md:grid-cols-2 md:gap-8">
+            <div>
+              <TelaAvaliacao />
+              <div className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
+                Depois de aproximar
+              </div>
+              <h3 className="mt-2 font-display text-xl tracking-tight text-frost">Abre a avaliação no Google</h3>
+              <p className="mt-2 max-w-[48ch] text-sm text-pretty text-frost/60">
+                O celular do cliente já abre na tela de avaliar a sua empresa. Ele toca nas
+                estrelas, escreve um comentário e posta. Leva menos de um minuto, ainda no balcão.
+              </p>
+            </div>
+
+            <div>
+              <ResultadoBusca />
+              <div className="mt-6 font-mono text-[11px] uppercase tracking-[0.2em] text-amber">
+                O resultado
+              </div>
+              <h3 className="mt-2 font-display text-xl tracking-tight text-frost">Sua empresa no topo</h3>
+              <p className="mt-2 max-w-[48ch] text-sm text-pretty text-frost/60">
+                Com mais avaliações boas, o Google mostra a sua empresa antes das outras, com
+                a nota e os comentários à vista. Quem pesquisa escolhe a mais bem avaliada.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -672,6 +699,82 @@ function CartaoAvaliacao() {
             <span className="flex-1 bg-[#34A853]"></span>
           </div>
         </div>
+      </div>
+    </div>
+  );
+}
+
+// Tela de avaliação que abre no celular do cliente depois de aproximar do cartão.
+function TelaAvaliacao() {
+  return (
+    <div className="overflow-hidden rounded-xl bg-white text-[#202124] shadow-2xl shadow-black/40">
+      <div className="flex items-center justify-between border-b border-line px-4 py-3">
+        <span className="text-sm text-ink-soft">✕</span>
+        <span className="text-sm font-medium">Oficina São Cristóvão</span>
+        <span className="w-3"></span>
+      </div>
+      <div className="p-5">
+        <div className="flex items-center gap-3">
+          <span className="grid size-10 place-items-center rounded-full bg-[#34A853] font-medium text-white">C</span>
+          <div className="leading-tight">
+            <div className="text-sm font-medium">Carlos M.</div>
+            <div className="text-xs text-ink-soft">Postando publicamente</div>
+          </div>
+        </div>
+        <div className="mt-5 flex justify-center gap-2 text-4xl leading-none text-[#FBBC05]">
+          {Array.from({ length: 5 }, (_, i) => (
+            <span key={i}>★</span>
+          ))}
+        </div>
+        <div className="mt-5 rounded-lg border border-[#1a73e8] p-3 text-sm leading-relaxed">
+          Serviço rápido e preço justo. Resolveram o barulho da suspensão no mesmo dia e
+          explicaram tudo antes de fazer. Recomendo!
+        </div>
+        <div className="mt-4 flex justify-end">
+          <span className="rounded-full bg-[#1a73e8] px-5 py-2 text-sm font-medium text-white">Postar</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Busca no Google depois das avaliações: a empresa aparece em primeiro, com nota e comentário.
+function ResultadoBusca() {
+  const outras = [
+    { nome: "Centro Automotivo Alfa", nota: "4,3", total: "41" },
+    { nome: "Mecânica Gama", nota: "4,1", total: "27" },
+  ];
+  return (
+    <div className="overflow-hidden rounded-xl bg-white text-[#202124] shadow-2xl shadow-black/40">
+      <div className="flex items-center gap-2 border-b border-line px-4 py-3">
+        <span className="text-sm text-ink-soft">⌕</span>
+        <span className="text-sm">oficina perto de mim</span>
+      </div>
+      <div className="space-y-2 p-3">
+        <div className="rounded-md border-2 border-amber bg-amber/10 p-3">
+          <div className="flex items-center justify-between gap-2">
+            <span className="font-semibold">Oficina São Cristóvão</span>
+            <span className="rounded-full bg-amber px-2 py-0.5 text-[10px] font-semibold text-white">1º lugar</span>
+          </div>
+          <div className="mt-1 flex flex-wrap items-center gap-x-1.5 text-sm text-ink-soft">
+            <span className="font-medium text-ink">4,9</span>
+            <span className="text-[#FBBC05]">★★★★★</span>
+            <span>(129) · Aberto agora</span>
+          </div>
+          <div className="mt-2 text-sm text-ink-soft">
+            “Serviço rápido e preço justo. Recomendo!”
+          </div>
+        </div>
+        {outras.map((o) => (
+          <div key={o.nome} className="rounded-md bg-frost p-3">
+            <div className="text-sm font-medium">{o.nome}</div>
+            <div className="mt-1 flex items-center gap-x-1.5 text-xs text-ink-soft">
+              <span>{o.nota}</span>
+              <span className="text-[#FBBC05]">★★★★</span>
+              <span>({o.total})</span>
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

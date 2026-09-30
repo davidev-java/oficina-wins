@@ -623,35 +623,53 @@ function PerfilGoogle() {
   );
 }
 
-// Cartão de avaliação do balcão: aproximação (NFC) ou QR code abrem a página de
-// avaliar no Google. Aqui o QR leva para este site.
+// Cartão de avaliação do Google (o de balcão, com NFC): o cliente aproxima o
+// celular ou lê o QR code e abre a página de avaliar. Aqui o QR leva para este site.
 function CartaoAvaliacao() {
+  const letras = [
+    ["G", "#4285F4"],
+    ["o", "#EA4335"],
+    ["o", "#FBBC05"],
+    ["g", "#4285F4"],
+    ["l", "#34A853"],
+    ["e", "#EA4335"],
+  ];
   return (
     <div className="grid place-items-center rounded-xl border border-white/10 bg-white/5 px-6 py-10 [perspective:1000px] sm:py-14">
       <div className="w-full max-w-[340px] [transform:rotateX(12deg)_rotateY(-14deg)_rotateZ(2deg)] [transform-style:preserve-3d]">
-        <div className="relative aspect-[85.6/54] rounded-2xl border border-white/15 bg-gradient-to-br from-[#26292f] to-[#111317] p-5 shadow-[18px_28px_40px_-12px_rgba(0,0,0,0.7)]">
-          <div className="absolute inset-x-0 top-0 h-1 rounded-t-2xl bg-amber"></div>
+        <div className="relative aspect-[85.6/54] overflow-hidden rounded-2xl bg-white p-5 text-[#202124] shadow-[18px_28px_40px_-12px_rgba(0,0,0,0.7)]">
           <div className="flex h-full gap-4">
             <div className="flex min-w-0 flex-1 flex-col justify-between">
               <div>
-                <div className="text-[11px] tracking-[0.2em] text-amber">★★★★★</div>
-                <div className="mt-2 font-display text-lg leading-tight text-frost sm:text-xl">
-                  Gostou do serviço?
+                <div className="text-[26px] font-medium leading-none tracking-tight sm:text-[30px]">
+                  {letras.map(([l, cor], i) => (
+                    <span key={i} style={{ color: cor }}>
+                      {l}
+                    </span>
+                  ))}
                 </div>
-                <div className="mt-1 text-[11px] leading-snug text-frost/60">
-                  Avalie a gente no Google
-                </div>
+                <div className="mt-2 text-[15px] leading-none tracking-[0.1em] text-[#FBBC05]">★★★★★</div>
+                <div className="mt-2 text-[12px] font-medium leading-snug">Avalie a gente no Google</div>
               </div>
-              <div className="flex items-center gap-2 font-mono text-[9px] uppercase tracking-[0.12em] text-frost/50">
-                <span className="text-sm text-amber">)))</span> Aproxime o celular
+              <div className="flex items-center gap-2 text-[10px] text-[#5f6368]">
+                <svg viewBox="0 0 24 24" className="size-5 shrink-0" fill="none" stroke="#202124" strokeWidth="2" strokeLinecap="round">
+                  <path d="M6 8.5a5 5 0 0 1 0 7" />
+                  <path d="M9.5 6a9 9 0 0 1 0 12" />
+                  <path d="M13 3.5a13 13 0 0 1 0 17" />
+                </svg>
+                Aproxime o celular
               </div>
             </div>
             <div className="flex flex-col items-center justify-center gap-1.5">
-              <div className="rounded-md bg-white p-1.5">
-                <img src="/qr-site.svg" alt="QR code" className="size-[72px] sm:size-20" />
-              </div>
-              <span className="font-mono text-[8px] uppercase tracking-[0.12em] text-frost/40">ou leia o QR</span>
+              <img src="/qr-site.svg" alt="QR code" className="size-[76px] sm:size-[84px]" />
+              <span className="text-[9px] text-[#5f6368]">ou leia o QR code</span>
             </div>
+          </div>
+          <div className="absolute inset-x-0 bottom-0 flex h-1.5">
+            <span className="flex-1 bg-[#4285F4]"></span>
+            <span className="flex-1 bg-[#EA4335]"></span>
+            <span className="flex-1 bg-[#FBBC05]"></span>
+            <span className="flex-1 bg-[#34A853]"></span>
           </div>
         </div>
       </div>
